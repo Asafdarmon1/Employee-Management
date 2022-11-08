@@ -1,0 +1,51 @@
+.FieldInfo{
+    font-family: Bitter,Georgia,"Times New Roman",Times,Serif;
+    font-size: 1em;
+}
+
+div{
+    width: 450px;
+    margin-left: 750px;
+    margin-top: 200px ;
+}
+
+input[type="text"]{
+    border: 1px solid;
+    background-color: aliceblue;
+    width: 400px;
+    padding: .5em;
+    font-size: 1.0em;
+}
+
+input[type="submit"]{
+    margin-left: 150px;
+}
+.Error{
+    color: red;
+}
+
+.Table{
+
+    margin-top: 100px;
+}
+
+.addButton {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: #4CAF50;
+    color: white;
+}
