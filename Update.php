@@ -14,8 +14,8 @@ $eID = false;
 
 if (isset($_POST["Update"])) {
 
-    $eFirstName = $_POST["EFirstName"];
-    $eLastName = $_POST["ELastName"];
+    $eFirstName = ucfirst($_POST["EFirstName"]);
+    $eLastName = ucfirst($_POST["ELastName"]);
     $emp_email = $_POST["Email"];
     $eID = $_POST["EID"];
     global $ConnectingDB; //variable from Db file
