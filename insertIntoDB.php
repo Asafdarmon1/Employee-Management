@@ -59,7 +59,7 @@ if (isset($_POST["Submit"])) {
         $stmt->bindValue('EMAIL', $emp_email);
         $Execute = $stmt->execute();
         if ($Execute) {
-            echo '<div style="text-align: center"> <span style="" class="success""> Record Has Been Added Successfully</span></div>';
+            header('location: viewFromDB.php');
         } else {
             echo '<span class="FieldInfoHeading">Please Try Again</span>';
         }
@@ -102,7 +102,7 @@ if (isset($_POST["Submit"])) {
             <span class="Error">*<?php echo $emailError ?><br></span>
             <br>
             <br>
-            <input type="submit" name="Submit" value="Submit">
+            <input class="Submit" type="submit" name="Submit" value="Submit">
             <br>
 
 

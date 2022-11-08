@@ -80,7 +80,7 @@ while ($DataRows = $stmt->fetch()) {
             <span class="Error">*<?php echo $emailError ?><br></span>
             <br>
             <br>
-            <input type="submit" name="Update" value="Update">
+            <input class="Submit" type="submit" name="Update" value="Update">
             <br>
 
 

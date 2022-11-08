@@ -55,6 +55,7 @@ while ($DataRows = $stmt->fetch()) {
 }
 ?>
 <div class="">
+    <h3 style="text-align: center; font-weight: bold">Are You Sure??</h3>
     <form class="" action="Delete.php?id=<?php echo $SearchQueryParameter; ?>" method="post">
         <fieldset style="">
             <span class="FieldInfo">Employee First Name</span>
@@ -79,7 +80,7 @@ while ($DataRows = $stmt->fetch()) {
             <span class="Error">*<?php echo $emailError ?><br></span>
             <br>
             <br>
-            <input type="submit" name="Delete" value="Delete">
+            <input class="Submit" type="submit" name="Delete" value="Delete">
             <br>
 
 
