@@ -1,5 +1,6 @@
 <?php
-require_once 'Include/DB.php';
+include "./inc/header.php";
+
 $eFirstNameError = '';
 $emailError = '';
 $eLastNameError = '';
@@ -59,7 +60,7 @@ if (isset($_POST["Submit"])) {
         $stmt->bindValue('EMAIL', $emp_email);
         $Execute = $stmt->execute();
         if ($Execute) {
-            header('location: viewFromDB.php');
+            header('location:home.php');
         } else {
             echo '<span class="FieldInfoHeading">Please Try Again</span>';
         }
@@ -73,13 +74,14 @@ if (isset($_POST["Submit"])) {
 
 <html>
 <head>
-    <title>Employee Management</title>
+    <title>Add Employee</title>
     <link rel="stylesheet" href="Include/style.css">
 </head>
 <body>
-<div class="">
-    <form class="" action="insertIntoDB.php" method="post">
-        <fieldset style="">
+<div style="text-align: center">
+    <form class="" action="add_employee.php" method="post">
+        <h1 style="margin-top: 3%">Add Employee:</h1>
+        <fieldset class="fieldset">
             <span class="FieldInfo">Employee First Name</span>
 
             <br>
@@ -110,7 +112,7 @@ if (isset($_POST["Submit"])) {
     </form>
 </div>
 
-
+<?php include './inc/footer.php'; ?>
 </body>
 </html>
 

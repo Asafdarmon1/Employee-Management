@@ -1,6 +1,6 @@
 
 body{
-    background-color: cornsilk;
+    background-color: #ffffff;
 }
 
 
@@ -9,31 +9,19 @@ body{
     font-family: Bitter,Georgia,"Times New Roman",Times,Serif;
     font-size: 1em;
 }
-
-div{
-    width: 450px;
-    margin-left: 750px;
-    margin-top: 200px ;
-}
-
 input[type="text"]{
     border: 1px solid;
     background-color: aliceblue;
-    width: 400px;
+    width: 90%;
     padding: .5em;
     font-size: 1.0em;
 }
 
 input[type="submit"]{
-    margin-left: 150px;
+
 }
 .Error{
     color: red;
-}
-
-.Table {
-
-
 }
 
 
@@ -49,6 +37,7 @@ input[type="submit"]{
     color: black;
     border: 2px solid #4CAF50;
     cursor: pointer;
+    text-align: center;
 
 }
 .Submit:hover{
@@ -74,3 +63,68 @@ input[type="submit"]{
     background-color: #4CAF50;
     color: white;
 }
+
+.fieldset{
+    width: 25%;
+    margin: 2% auto auto auto;
+    border: 2px solid;
+    padding: 4%;
+    text-align: center;
+}
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.nav-links li {
+    list-style: none;
+    color: black;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-family: Poppins;
+    color: #F5F5F5;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: black;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

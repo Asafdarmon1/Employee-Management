@@ -1,5 +1,6 @@
 <?php
-require_once 'Include/DB.php';
+include "./inc/header.php";
+
 $SearchQueryParameter = $_GET['id'];
 $eFirstNameError = '';
 $emailError = '';
@@ -12,18 +13,17 @@ $eEmail = false;
 $eID = false;
 
 
-if (isset($_POST["Update"])) {
+if (isset($_POST["Delete"])) {
 
-    $eFirstName = ucfirst($_POST["EFirstName"]);
-    $eLastName = ucfirst($_POST["ELastName"]);
+    $eFirstName = $_POST["EFirstName"];
+    $eLastName = $_POST["ELastName"];
     $emp_email = $_POST["Email"];
     $eID = $_POST["EID"];
     global $ConnectingDB; //variable from Db file
-    $sql = "UPDATE emp_record SET eID='$eID', eFirstname = '$eFirstName', eLastName = '$eLastName', eEmail = '$emp_email' 
-    WHERE id='$SearchQueryParameter'";
+    $sql = "DELETE FROM emp_record WHERE id='$SearchQueryParameter'";
     $Execute = $ConnectingDB->query($sql);
     if ($Execute) {
-        echo '<script>window.open("viewFromDB.php?id=Record Updated Successfully","_self")</script>';
+        echo '<script>window.open("home.php?id=Record Deleted Successfully","_self")</script>';
     } else {
         echo '<span class="FieldInfoHeading">Please Try Again</span>';
     }
@@ -36,7 +36,7 @@ if (isset($_POST["Update"])) {
 
 <html>
 <head>
-    <title>Update Data</title>
+    <title>Delete</title>
     <link rel="stylesheet" href="Include/style.css">
 </head>
 <body>
@@ -56,39 +56,40 @@ while ($DataRows = $stmt->fetch()) {
 }
 ?>
 <div class="">
-    <form class="" action="Update.php?id=<?php echo $SearchQueryParameter; ?>" method="post">
-        <fieldset style="">
-            <span class="FieldInfo">Employee First Name</span>
+    <h3 style="margin-top: 3%; text-align: center; font-weight: bold">Are You Sure??</h3>
+    <form action="delete_employee.php?id=<?php echo $SearchQueryParameter; ?>" method="post">
+        <fieldset class="fieldset">
+            <span>Employee First Name</span>
 
             <br>
             <input type="text" name="EFirstName" value="<?php echo $FirstName ?>">
             <span class="Error">*<?php echo $eFirstNameError ?><br></span>
             <br>
-            <span class="FieldInfo">Employee Last Name</span>
+            <span>Employee Last Name</span>
             <br>
             <input type="text" name="ELastName" value="<?php echo $LastName ?>">
             <span class="Error">*<?php echo $eLastNameError ?><br></span>
             <br>
-            <span class="FieldInfo">Employee ID</span>
+            <span>Employee ID</span>
             <br>
             <input type="text" name="EID" value="<?php echo $ID ?>">
             <span class="Error">*<?php echo $eidError ?><br></span>
             <br>
-            <span class="FieldInfo">Employee Email</span>
+            <span>Employee Email</span>
             <br>
             <input type="text" name="Email" value="<?php echo $Email ?>">
             <span class="Error">*<?php echo $emailError ?><br></span>
             <br>
             <br>
-            <input class="Submit" type="submit" name="Update" value="Update">
+            <span>
+            <input class="Submit" type="submit" name="Delete" value="Delete">
+            </span>
             <br>
-
-
         </fieldset>
     </form>
 </div>
 
-
+<?php include './inc/footer.php'; ?>
 </body>
 </html>
 
